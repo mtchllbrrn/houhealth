@@ -1,0 +1,18 @@
+<h1>Violations</h1>
+
+<% @violations.each do |violation| %>
+    <p>Account Number: <%= violation.account_number %></p>
+    <p>Facility Name: <%= violation.facility_name %></p>
+    <p>Facility Type: <%= violation.facility_type %></p>
+    <p>Inspection Date: <%= violation.inspection_date %></p>
+    <p>Site Name: <%= violation.site_name %></p>
+    <p>Address: <%= violation.address %></p>
+    <p>Violation Code: <%= violation.violation_code %></p>
+    <p>Violation Weight: <%= violation.violation_weight %></p>
+    <p>Violation Comment: <%= violation.violation_comment %></p>
+    <p>Correct By: <%= violation.correct_by %></p>
+    <p>Score: <%= violation.score %></p>
+    <p>Number of Employees: <%= violation.number_of_employees %></p>
+    <p>Permit Type: <%= violation.permit_type %></p>
+    <p>Activity Type: <%= violation.activity_type%></p>
+<% end %>
