@@ -1,8 +1,8 @@
 <h1>Violations</h1>
 
 <% @violations.each do |violation| %>
+    <h3>Facility Name: <%= violation.facility_name %></h3>
     <p>Account Number: <%= violation.account_number %></p>
-    <p>Facility Name: <%= violation.facility_name %></p>
     <p>Facility Type: <%= violation.facility_type %></p>
     <p>Inspection Date: <%= violation.inspection_date %></p>
     <p>Site Name: <%= violation.site_name %></p>
