@@ -1,20 +1,24 @@
-<h1>Violations</h1>
-
-<% @violations.each do |violation| %>
-    <h3>Facility Name: <%= violation.facility_name %></h3>
-    <ul>
-      <li>Account Number: <%= violation.account_number %></li>
-      <li>Facility Type: <%= violation.facility_type %></li>
-      <li>Inspection Date: <%= violation.inspection_date %></li>
-      <li>Site Name: <%= violation.site_name %></li>
-      <li>Address: <%= violation.address %></li>
-      <li>Violation Code: <%= violation.violation_code %></li>
-      <li>Violation Weight: <%= violation.violation_weight %></li>
-      <li>Violation Comment: <%= violation.violation_comment %></li>
-      <li>Correct By: <%= violation.correct_by %></li>
-      <li>Score: <%= violation.score %></li>
-      <li>Number of Employees: <%= violation.number_of_employees %></li>
-      <li>Permit Type: <%= violation.permit_type %></li>
-      <li>Activity Type: <%= violation.activity_type%></li>
-    </ul>
+<% if @violations.empty? %>
+    <%= image_tag "no-results.svg", alt: "no results", class: "center-block" %>
+    <h2 class="text-center">No results found.</h2>
+<% else %>
+    <h1>Violations</h1>
+    <% @violations.each do |violation| %>
+        <h3>Facility Name: <%= violation.facility_name %></h3>
+        <ul>
+          <li>Account Number: <%= violation.account_number %></li>
+          <li>Facility Type: <%= violation.facility_type %></li>
+          <li>Inspection Date: <%= violation.inspection_date %></li>
+          <li>Site Name: <%= violation.site_name %></li>
+          <li>Address: <%= violation.address %></li>
+          <li>Violation Code: <%= violation.violation_code %></li>
+          <li>Violation Weight: <%= violation.violation_weight %></li>
+          <li>Violation Comment: <%= violation.violation_comment %></li>
+          <li>Correct By: <%= violation.correct_by %></li>
+          <li>Score: <%= violation.score %></li>
+          <li>Number of Employees: <%= violation.number_of_employees %></li>
+          <li>Permit Type: <%= violation.permit_type %></li>
+          <li>Activity Type: <%= violation.activity_type%></li>
+        </ul>
+    <% end %>
 <% end %>
