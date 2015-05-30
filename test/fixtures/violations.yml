@@ -1,37 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  account_number: MyString
-  facility_name: MyString
-  risk: 1
-  facility_type: MyString
-  inspection_date: 2015-05-21 20:34:10
+  account_number: 1
+  date: 2015-05-29 20:09:24
   inspector: MyString
   site_name: MyString
-  address: MyString
-  violation_code: MyString
-  violation_comments: MyString
-  violation_weight: 3
-  correct_by: 2015-05-21 20:34:10
-  score: 3
-  number_of_employees: 3
-  permit_type: MyString
-  activity_type: MyString
+  code: MyString
+  weight: 1
+  comment: MyString
+  correct_by: 2015-05-29 20:09:24
+  score: 1
 
 two:
-  account_number: MyString
-  facility_name: MyString
-  risk: 1
-  facility_type: MyString
-  inspection_date: 2015-05-21 20:34:10
+  account_number: 1
+  date: 2015-05-29 20:09:24
   inspector: MyString
   site_name: MyString
-  address: MyString
-  violation_code: MyString
-  violation_comments: MyString
-  violation_weight: 3
-  correct_by: 2015-05-21 20:34:10
-  score: 3
-  number_of_employees: 3
-  permit_type: MyString
-  activity_type: MyString
+  code: MyString
+  weight: 1
+  comment: MyString
+  correct_by: 2015-05-29 20:09:24
+  score: 1
