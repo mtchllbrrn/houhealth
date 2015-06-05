@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530010924) do
+ActiveRecord::Schema.define(version: 20150605210618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,7 @@ ActiveRecord::Schema.define(version: 20150530010924) do
 
   add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
 
-  create_table "restaurants", force: :cascade do |t|
-    t.integer  "account_number"
+  create_table "restaurants", primary_key: "account_number", force: :cascade do |t|
     t.string   "facility_name"
     t.string   "address"
     t.integer  "number_of_employees"
@@ -38,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150530010924) do
   end
 
   create_table "violations", force: :cascade do |t|
-    t.integer  "account_number"
+    t.integer  "restaurant_id"
     t.datetime "date"
     t.string   "inspector"
     t.string   "site_name"
@@ -47,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150530010924) do
     t.string   "comment"
     t.datetime "correct_by"
     t.integer  "score"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
