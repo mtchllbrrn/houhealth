@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
   def show
-    @restaurant = params[:restaurant]
+    @restaurant = Restaurant.find params[:account_number]
   end
 end
