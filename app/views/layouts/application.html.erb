@@ -15,7 +15,7 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <%= link_to "HouHealth", root_path, id:"logo", class: "navbar-brand" %>
-      <%= form_tag(restaurants_path, action: :search, method: :post, id: "search-form",
+      <%= form_tag(search_path, action: :search, method: :post, id: "search-form",
             class: "navbar-form navbar-right") do %>
         <%= text_field_tag :search, params[:search], 
               placeholder: "Search Restaurants", class: "form-control" %>
