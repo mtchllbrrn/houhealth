@@ -1,3 +1,9 @@
-<% @restaurants.each do |r| %>
-  <p><%= r.facility_name %></p>
-<% end %>
+Found <%= @restaurants.count %> results.
+
+  <% @restaurants.each do |r| %>
+    <ul class="list-unstyled">
+      <lh><%= link_to r.facility_name.titleize, restaurants_path(r.account_number) %><lh>
+      <li><%= r.address.titleize %></li>
+      <li><%= r.violations.count %> violations</li>
+    </ul>
+  <% end %>
