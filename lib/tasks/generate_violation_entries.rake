@@ -7,8 +7,9 @@ task :generate_violation_entries => :environment do
   csv_text = File.read('db/full-data.csv')
   csv = CSV.parse(csv_text, :headers => true)
   csv.each do |row|
-    Violation.create(account_number: row[0],
-                     date: row[4],
+    Violation.create(restaurant_id: row[0],
+                     risk: row[2],
+                     date: DateTime.strptime(row[4], '%m/%d/%Y'),
                      inspector: row[5],
                      site_name: row[6],
                      code: row[8],
