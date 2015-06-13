@@ -1,0 +1,17 @@
+0 account_number
+1 facility_name
+2 risk
+3 facility_type
+4 inspection_date
+5 inspector
+6 site_name
+7 address
+8 violation_code
+9 violation_weight
+10 violation_comment
+11 correct_by
+12 score
+13 attachment
+14 number_of_employees
+15 permit_type
+16 activity_type
