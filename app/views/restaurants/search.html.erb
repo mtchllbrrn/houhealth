@@ -1,0 +1,15 @@
+<% if @restaurants.any? %>
+  Found <%= @restaurants.count %> results.
+  <% @restaurants.each do |r| %>
+    <ul class="list-unstyled">
+      <lh><%= link_to r.facility_name.titleize, restaurants_path(r.account_number) %><lh>
+      <li><%= r.address.titleize %></li>
+      <li><%= r.violations.count %> violations</li>
+    </ul>
+  <% end %>
+<% else %>
+  <div class="text-center">
+    <%= image_tag "no-results.svg" %>
+    <p>No results found.</p>
+  </div>
+<% end %>
