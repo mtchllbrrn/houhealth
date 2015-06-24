@@ -3,8 +3,13 @@
 <hr>
 <h3>Violations</h3>
 <dl class="dl-horizontal">
-  <% @restaurant.violations.each do |v| %>
-    <dt><%= v.code %><br/><small><%= v.date %></small></dt>
-    <dd><%= v.comment %></dd>
+  <% @restaurant.violations.group_by(&:date).each do |date, violations| %>
+    <div>
+      <h5><%= date.strftime("%m-%d-%Y") %></h5>
+      <% violations.each do |v| %>
+        <dt><%= v.code %></dt>
+        <dd><%= v.comment %></dd>
+      <% end %>
+    </div>
   <% end %>
 </dl>
