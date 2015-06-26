@@ -1,5 +1,6 @@
 <% if @restaurants.any? %>
-  Found <%= @restaurants.count %> results.
+  <em>Found <%= @restaurants.count %> results.</em>
+  <hr>
   <% @restaurants.each do |r| %>
     <ul class="list-unstyled">
       <lh><%= link_to r.facility_name.titleize, restaurants_path(r.account_number) %><lh>
