@@ -17,7 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
+  host: localhost
   username: postgres
   password: postgres
   # For details on connection pooling, see rails configuration guide
@@ -84,3 +84,5 @@ test:
 production:
   <<: *default
   database: houhealth_production
+  username: <%= ENV['HOUHEALTH_DB_USER'] %>
+  password: <%= ENV['HOUHEALTH_DB_PASS'] %>
