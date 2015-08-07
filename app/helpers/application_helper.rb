@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  # Gets restaurant path by name. Useful for the front page, where
+  # we hard code links to Cook's top 10 restaurants.
   def get_path(restaurant_name)
     r = Restaurant.search(restaurant_name).first
     if r
