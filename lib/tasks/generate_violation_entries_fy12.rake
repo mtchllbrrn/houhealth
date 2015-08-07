@@ -3,7 +3,7 @@
 task :generate_violation_entries_fy12 => :environment do
 
   csv_text = File.open('db/data/by-violation/fy12-violations.csv', 'r:ISO-8859-1')
-  csv = CSV.parse(csv_text, :headers => true)
+  csv = CSV.parse(csv_text)
   csv.each do |row|
     Violation.create(restaurant_id: row[0],
                      risk: row[2],
