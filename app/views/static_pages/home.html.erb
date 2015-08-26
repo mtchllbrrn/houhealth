@@ -4,7 +4,7 @@
     <h1>Welcome to HouHealth</h1>
   </div>
   <h2>
-    Wondering how your favorite Houston restaurants fare in health inspections?
+    Wondering how your favorite Houston restaurants fare in health inspections.
     Try searching below.
   </h2>
 	<%= form_tag(search_path, action: :search, method: :post, id: "search-form",
@@ -21,8 +21,8 @@
              </div>
            <% end %>
 </div>
-<section>
-  <h3>Need a place to start? Here's <a href="http://www.houstonchronicle.com/entertainment/top-100-restaurants/">Alison Cook's Top Ten</a>:</h3>
+<section class="col-md-6">
+  <h4>Need a place to start? Here's <a href="http://www.houstonchronicle.com/entertainment/top-100-restaurants/">Alison Cook's Top Ten</a>:</h4>
   <ol>
       <li><a href="<%= get_path "Oxheart" %>">Oxheart</a> - <%= pluralize(get_violation_count("oxheart"), "violations") %></li>
       <li><a href="<%= get_path "The Pass" %>">The Pass</a> - <%= pluralize(get_violation_count("the pass"), "violations") %></li>
