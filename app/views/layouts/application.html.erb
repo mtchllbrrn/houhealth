@@ -25,8 +25,8 @@
         </button>
         <%= link_to "HouHealth", root_path, id:"logo", class: "navbar-brand" %>
       </div> <!-- /.navbar-header -->
-          <% if !current_page?(root_path) %>
-	        	<%= form_tag(search_path, action: :search, method: :post, id: "search-form",
+      <% if !current_page?(root_path) %>
+        <%= form_tag(search_path, action: :search, method: :post, id: "search-form",
 	            class: "navbar-form navbar-right") do %>
 	          <div class="input-group">
 	            <%= text_field_tag :search, params[:search], 
@@ -39,7 +39,7 @@
  	           </div>
  	         </div>
  	       <% end %>
-      	<% end%>
+      	<% end %>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><%= link_to "About", about_path %></li>
