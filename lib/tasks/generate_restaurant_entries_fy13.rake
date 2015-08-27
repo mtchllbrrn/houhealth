@@ -5,7 +5,7 @@ require 'csv'
 task :generate_restaurant_entries_fy13 => :environment do
 
   csv_text = File.read('db/data/by-violation/fy13-violations.csv')
-  csv = CSV.parse(csv_text)
+  csv = CSV.parse(csv_text, :headers => true)
   csv.each do |row|
     account_number = row[0]
     if !(Restaurant.exists? account_number: account_number)

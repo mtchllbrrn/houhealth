@@ -5,7 +5,7 @@ require 'csv'
 task :generate_violation_entries_fy14 => :environment do
 
   csv_text = File.open('db/data/by-violation/fy14-violations.csv', "r:ISO-8859-1")
-  csv = CSV.parse(csv_text)
+  csv = CSV.parse(csv_text, :headers => true)
   csv.each do |row|
     Violation.create(restaurant_id: row[0],
                      risk: row[2],
