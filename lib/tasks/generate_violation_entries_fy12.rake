@@ -1,4 +1,4 @@
-# full-data.csv presents each violation as a separate row. It makes more sense to model the restaurants and their violations separately with a has-many/belongs-to relationship.  This rake task generates the violation model from the dataset.
+require 'csv'
 
 task :generate_violation_entries_fy12 => :environment do
 

@@ -1,11 +1,10 @@
-# full-data.csv presents each violation as a separate row. It makes more sense to model the restaurants and their violations separately with a has-many/belongs-to relationship.  This rake task generates the restaurant model from the dataset.
-
 require 'csv'
 
 task :generate_restaurant_entries_fy14 => :environment do
 
   csv_text = File.read('db/data/by-violation/fy14-violations.csv')
   csv = CSV.parse(csv_text, :headers => true)
+  csv_text.encode!('UTF-8', 'UTF-8', :invalid => :replace)
   csv.each do |row|
     account_number = row[0]
     if !(Restaurant.exists? account_number: account_number)
