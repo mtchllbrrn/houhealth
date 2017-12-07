@@ -10,6 +10,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
     </script>
   <![endif]-->
+  <%= render 'analytics' %>
 </head>
 <body>
   <nav role="navigation" class="navbar navbar-default">
@@ -24,10 +25,7 @@
         </button>
         <%= link_to "HouHealth", root_path, id:"logo", class: "navbar-brand" %>
       </div> <!-- /.navbar-header -->
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "About", about_path %></li>
-        </ul>
+      <% if !current_page?(root_path) %>
         <%= form_tag(search_path, action: :search, method: :post, id: "search-form",
             class: "navbar-form navbar-right") do %>
           <div class="input-group">
@@ -41,6 +39,11 @@
             </div>
           </div>
         <% end %>
+      <% end %>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "About", about_path %></li>
+        </ul>
       </div> <!-- /.navbar-collapse -->
     </div> <!-- /.container -->
   </nav>
